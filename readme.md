@@ -37,7 +37,7 @@ Or using `gem`
 ```bash
 $ gem install webhoseio-ruby
 ```
- 
+
 Use the API
 -----------
 
@@ -45,7 +45,7 @@ To get started, you need to import the library, and set your access token.
 (Replace `YOUR_API_KEY` with your actual API key).
 
 ```ruby
-require 'webhoseio'
+require 'webhoseio-ruby'
 webhoseio = Webhoseio.new('YOUR_API_KEY')
 ```
 
@@ -71,7 +71,7 @@ puts output['posts'][0]['title']
 ```
 
 For your convenience, the output object is iterable, so you can loop over it
-and get all the results of this batch (up to 100). 
+and get all the results of this batch (up to 100).
 
 ```ruby
 total_words = 0
@@ -90,15 +90,15 @@ Full documentation
 
 * ``query(end_point_str, params)``
 
-  * end_point_str: 
+  * end_point_str:
     * filterWebData - access to the news/blogs/forums/reviews API
     * productSearch - access to data about eCommerce products/services
     * darkWebAPI - access to the dark web (coming soon)
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
-    
-    
+
+
 Polling
 -------
 
@@ -114,4 +114,4 @@ while true do
     r = webhoseio.get_next()
   end
 end
-```        
+```
