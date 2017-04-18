@@ -9,7 +9,7 @@ A simple way to access the [Webhose.io](https://webhose.io) API from your Ruby c
 require 'webhoseio-ruby'
 
 webhoseio = Webhoseio.new('YOUR_API_KEY')
-output = webhoseio.query('filterWebData', {'q': 'github'})
+output = webhoseio.query('filterWebContent', {'q': 'github'})
 puts output['posts'][0]['text'] # Print the text of the first post
 puts output['posts'][0]['published'] # Print the text of the first post publication date
 
@@ -52,14 +52,14 @@ webhoseio = Webhoseio.new('YOUR_API_KEY')
 **API Endpoints**
 
 The first parameter the query() function accepts is the API endpoint string. Available endpoints:
-* filterWebData - access to the news/blogs/forums/reviews API
-* productSearch - access to data about eCommerce products/services
-* darkWebAPI - access to the dark web (coming soon)
+* filterWebContent - access to the news/blogs/forums/reviews API
+* productFilter - access to data about eCommerce products/services
+* darkFilter - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
 
 ```ruby
-output = webhoseio.query('filterWebData', {'q': 'github'})
+output = webhoseio.query('filterWebContent', {'q': 'github'})
 puts output['totalResults']
 # 15565094
 puts output['posts'].size
@@ -91,9 +91,9 @@ Full documentation
 * ``query(end_point_str, params)``
 
   * end_point_str:
-    * filterWebData - access to the news/blogs/forums/reviews API
-    * productSearch - access to data about eCommerce products/services
-    * darkWebAPI - access to the dark web (coming soon)
+    * filterWebContent - access to the news/blogs/forums/reviews API
+    * productFilter - access to data about eCommerce products/services
+    * darkFilter - access to the dark web (coming soon)
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
@@ -106,7 +106,7 @@ If you want to make repeated searches, performing an action whenever there are
 new results, use code like this:
 
 ```ruby
-r = webhoseio.query('filterWebData', {'q': 'skyrim'})
+r = webhoseio.query('filterWebContent', {'q': 'skyrim'})
 while true do
   r['posts'].each do |post|
     perform_action(post)
