@@ -5,6 +5,6 @@ Gem::Specification.new do |s|
   s.summary     = 'webhose.io client'
   s.description = 'webhose.io client for Ruby'
   s.authors     = ['Jakub Roman']
-  s.files       = ['webhoseio.rb']
+  s.files       = ['lib/webhoseio-ruby.rb']
   s.homepage    = 'https://webhose.io'
 end
