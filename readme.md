@@ -6,9 +6,9 @@ webhose.io client for Ruby
 A simple way to access the [Webhose.io](https://webhose.io) API from your Ruby code
 
 ```ruby
-require 'webhoseio-ruby'
+require 'webhoseio'
 
-webhoseio = Webhoseio.new('YOUR_API_KEY')
+webhoseio = Webhoseio::Client.new('YOUR_API_KEY')
 output = webhoseio.query('filterWebContent', {'q': 'github'})
 puts output['posts'][0]['text'] # Print the text of the first post
 puts output['posts'][0]['published'] # Print the text of the first post publication date
@@ -45,7 +45,7 @@ To get started, you need to import the library, and set your access token.
 (Replace `YOUR_API_KEY` with your actual API key).
 
 ```ruby
-require 'webhoseio-ruby'
+require 'webhoseio'
 webhoseio = Webhoseio.new('YOUR_API_KEY')
 ```
 
