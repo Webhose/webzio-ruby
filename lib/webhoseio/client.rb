@@ -1,7 +1,7 @@
-module Webhoseio
+module Webzio
   class Client
 
-    BASE_URL = "https://webhose.io/"
+    BASE_URL = "https://webz.io/"
 
     def initialize(token)
       @next = ''
