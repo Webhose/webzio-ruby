@@ -1,6 +1,6 @@
 require 'json'
 require 'net/https'
-require_relative "./webhoseio/client"
+require_relative "./webzio/client"
 
-module Webhoseio
+module Webzio
 end
